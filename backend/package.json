@@ -1,0 +1,7 @@
+{
+  "name": "investor_api",
+  "private": true,
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}

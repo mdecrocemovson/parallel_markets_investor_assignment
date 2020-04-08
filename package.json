@@ -11,6 +11,9 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
+    "react-dropzone": "^10.2.2",
+    "react-dropzone-component": "^3.2.0",
+    "react-file-base64": "^1.0.3",
     "react-scripts": "3.4.1",
     "react-select-us-states": "^0.1.2"
   },

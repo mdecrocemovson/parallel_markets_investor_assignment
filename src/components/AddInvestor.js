@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Form, Button } from "react-bootstrap";
 import "../styles/AddInvestor.scss";
 import SelectUSState from "react-select-us-states";
+import FileBase64 from "react-file-base64";
 
 const AddInvestor = () => {
   const [firstName, setFirstName] = useState("");
@@ -34,37 +35,9 @@ const AddInvestor = () => {
     return "";
   };
 
-  const readFile = (files) => {
-    debugger
-    let file = files.target.files;
-    if (file && file[0]) {
-      let formPayload = new FormData();
-      formPayload.append("uploaded_image", file[0]);
-      setFile(formPayload);
-      // sendImageToController(formPayload);
-    }
-  };
-
-  // const sendImageToController = (formPayLoad) => {
-  //   debugger
-  //   fetch(`http://localhost:5000/api/v1/investors`, {
-  //     credentials: "same-origin",
-  //     headers: {},
-  //     method: "POST",
-  //     body: formPayLoad,
-  //   })
-  //     // might be a good idea to put error handling here
-
-  //     .then((response) => response.json())
-  //     .then((imageFromController) => {
-  //       // optionally, you can set the state of the component to contain the image
-  //       // object itself that was returned from the rails controller, completing
-  //       // the post cycle
-  //       debugger
-  //     });
-  // };
-  debugger
-
+  const selectImage = (files) => {
+    setFile(files[0].base64);
+  }
   return (
     <div className="AddInvestor-formContainer">
       <div className="AddInvestor-formElements">
@@ -139,13 +112,7 @@ const AddInvestor = () => {
               />
             </Form.Group>
           </div>
-          <Form.File
-            id="custom-file"
-            label="Custom file input"
-            custom
-            onClick={file => readFile(file)}
-          />
-          <input type='file' onChange={readFile}></input>
+          <FileBase64 multiple={true} onDone={selectImage} />
         </Form>
         <button
           onClick={() =>
@@ -158,7 +125,7 @@ const AddInvestor = () => {
                 streetAddress,
                 state,
                 zipCode,
-                file
+                file,
               },
             })
           }

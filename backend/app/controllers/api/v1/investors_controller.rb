@@ -6,9 +6,6 @@ class Api::V1::InvestorsController < ApplicationController
   # POST /investors.json
   def create
     binding.pry
-    # newImage = InvestorFileUploader.new
-    # newImage.file = params["uploaded_image"]
-    @investor = Investor.new(investor_params)
     render json: @investor
   end
 

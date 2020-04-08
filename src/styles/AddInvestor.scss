@@ -6,17 +6,19 @@
   }
   &-formElements {
     background-color: #EDF0F3;
-    padding: 20px;
-  }
-
-  &-location {
-    display: flex;
-  }
-  &-locationInput {
-    flex: 2;
+    padding: 25px;
   }
   &-states {
     flex: 1;
     height: 30px;
+    margin-left: 20px;
+  }
+  &-errors {
+    color: #bb0000;
+  }
+  &-submit {
+    background: #EEEFF3;
+    text-align: center;
+    padding: 0px 25px 25px 25px;
   }
 }

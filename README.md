@@ -1,5 +1,7 @@
 Getting started
+
 To start Maxed Out run:
+
 $ cd backend
 $ bundle install
 $ bundle exec rake:db create

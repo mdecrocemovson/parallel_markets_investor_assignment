@@ -5,8 +5,13 @@ class Api::V1::InvestorsController < ApplicationController
   # POST /investors
   # POST /investors.json
   def create
-    binding.pry
-    render json: @investor
+    @investor = Investor.create(investor_params)
+    if @investor.valid?
+      render json: @investor
+    else 
+      render json: @investor.errors.full_messages
+    end
+    
   end
 
   private

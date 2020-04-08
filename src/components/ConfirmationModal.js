@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from "react";
-import { Form, Button, Modal } from "react-bootstrap";
+import React from "react";
+import { Button, Modal } from "react-bootstrap";
 import "../styles/AddInvestor.scss";
 
 const ConfirmationModal = ({

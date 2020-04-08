@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from "react";
-import { Form, Button, Modal } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form, Button } from "react-bootstrap";
 import "../styles/AddInvestor.scss";
 import SelectUSState from "react-select-us-states";
 import FileBase64 from "react-file-base64";

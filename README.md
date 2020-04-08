@@ -32,5 +32,6 @@ Desired future features (could not be implemented due to time constraint)
 3. Improving of styling in modal.
 4. Adding in carrierwave ruby gem full functionality in order to add files in full form, rather than in base64 package
 https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete
+5. Authentication and authorization capabilities
 
 

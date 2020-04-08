@@ -11,6 +11,8 @@ const AddInvestor = () => {
   const [streetAddress, setStreetAddress] = useState("");
   const [state, setState] = useState("");
   const [zipCode, setZipCode] = useState("");
+  const [file, setFile] = useState("");
+
   const [validated, setValidated] = useState(false);
   console.log(firstName);
 
@@ -23,14 +25,46 @@ const AddInvestor = () => {
       },
       body: JSON.stringify(payload),
     })
-    .then((response) => {
+      .then((response) => {
         return response.json();
-    })
-    .then((body) => {
+      })
+      .then((body) => {
         debugger;
-    })
+      });
     return "";
   };
+
+  const readFile = (files) => {
+    debugger
+    let file = files.target.files;
+    if (file && file[0]) {
+      let formPayload = new FormData();
+      formPayload.append("uploaded_image", file[0]);
+      setFile(formPayload);
+      // sendImageToController(formPayload);
+    }
+  };
+
+  // const sendImageToController = (formPayLoad) => {
+  //   debugger
+  //   fetch(`http://localhost:5000/api/v1/investors`, {
+  //     credentials: "same-origin",
+  //     headers: {},
+  //     method: "POST",
+  //     body: formPayLoad,
+  //   })
+  //     // might be a good idea to put error handling here
+
+  //     .then((response) => response.json())
+  //     .then((imageFromController) => {
+  //       // optionally, you can set the state of the component to contain the image
+  //       // object itself that was returned from the rails controller, completing
+  //       // the post cycle
+  //       debugger
+  //     });
+  // };
+  debugger
+
   return (
     <div className="AddInvestor-formContainer">
       <div className="AddInvestor-formElements">
@@ -105,6 +139,13 @@ const AddInvestor = () => {
               />
             </Form.Group>
           </div>
+          <Form.File
+            id="custom-file"
+            label="Custom file input"
+            custom
+            onClick={file => readFile(file)}
+          />
+          <input type='file' onChange={readFile}></input>
         </Form>
         <button
           onClick={() =>
@@ -117,6 +158,7 @@ const AddInvestor = () => {
                 streetAddress,
                 state,
                 zipCode,
+                file
               },
             })
           }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_07_222928) do
+ActiveRecord::Schema.define(version: 2020_04_08_004737) do
 
   create_table "investors", force: :cascade do |t|
     t.string "firstName"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_04_07_222928) do
     t.string "zipCode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "file"
   end
 
 end

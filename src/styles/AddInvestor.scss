@@ -1,0 +1,22 @@
+.AddInvestor {
+  &-formContainer {
+    padding: 100px 200px 300px 200px;
+    background-color: #0B859A;
+    
+  }
+  &-formElements {
+    background-color: #EDF0F3;
+    padding: 20px;
+  }
+
+  &-location {
+    display: flex;
+  }
+  &-locationInput {
+    flex: 2;
+  }
+  &-states {
+    flex: 1;
+    height: 30px;
+  }
+}

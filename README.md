@@ -14,6 +14,7 @@ $ rails server
 In another terminal instance, run:
 ```
 $ cd ..
+$ yarn
 $ yarn start
 ```
 

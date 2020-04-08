@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web app is used to input an investors information and an accompanying file.
 
-## Available Scripts
+Getting started
 
-In the project directory, you can run:
+In one terminal instance run:
+```
+$ cd backend
+$ bundle install
+$ bundle exec rake:db create
+$ bundle exec rake:db migrate
+$ rails server
+```
 
-### `yarn start`
+In another terminal instance, run:
+```
+$ cd ..
+$ yarn start
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Features created:
+1. Form to input Investor first name, Investor last name, Investor date of birth, Investor phone number, Investor street address, Investor state, Investor zip code
+2. Use of 'react-select-us-states' package
+3. Form validation
+4. Persisting of form data to backend API (Ruby on Rails)
+5. Ability to input files and have them converted into base64 via 'react-file-base64' package, then persisted to database.
+6. Use of SCSS to style form
+7. Use of react-bootstrap to style inputs, form, and modal.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Desired future features (could not be implemented due to time constraint)
+1. Use of form validator such as formik
+2. Use of google maps dropdown package to add addresses (https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete)
+3. Improving of styling in modal.
+4. Adding in carrierwave ruby gem full functionality in order to add files in full form, rather than in base64 package
+https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete
+5. Authentication and authorization capabilities
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
